@@ -1,0 +1,129 @@
+pipeline {
+    agent any
+
+    tools{
+      jdk 'jdk11'
+      maven 'maven3'
+    }
+
+    environment {
+        // sonar scanner details
+        SCANNER_HOME = tool 'sonar-scanner'
+        SONAR_URL = 'http://108.130.67.50:9000'
+        SONAR_TOKEN = credentials('sonarqube-token')
+        SONAR_PROJECT_NAME = 'shopping-cart'
+        SONAR_PROJECT_KEY = 'shopping-cart'
+
+        // Docker Registry details
+        DOCKER_IMAGE = "shopping_cart:$BUILD_NUMBER"
+        REGISTRY_USER = 'horlar'
+    }
+
+    stages {
+
+        stage('Checkout Repository') {
+            steps {
+                git branch: 'lesson/jenkins', 
+                changelog: false, 
+                poll: false, 
+                url: 'https://github.com/intellisenseCodez/devops_training_guide.git'
+            }
+        }
+
+        stage('Compile Java Project') {
+            steps {
+                
+                // build the project and create a JAR file
+                sh "cd ./14-Jenkins/projects/shopping-cart &&  mvn clean compile"
+        
+            }
+        }
+
+        stage('Static Code Analysis') {
+            steps {
+                script {
+                    // Validate scanner exists
+                    if (!fileExists("$SCANNER_HOME/bin/sonar-scanner")) {
+                        error "SonarQube scanner not found at: $SCANNER_HOME/bin/sonar-scanner"
+                    }
+                    
+                    sh """
+                        ${SCANNER_HOME}/bin/sonar-scanner \
+                        -Dsonar.host.url=$SONAR_URL \
+                        -Dsonar.login=$SONAR_TOKEN \
+                        -Dsonar.projectName=$SONAR_PROJECT_NAME \
+                        -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+                        -Dsonar.java.binaries=. \
+                    """
+                }
+            }
+        }
+
+        stage('Build Application') {
+            steps {
+                // build the project and create a JAR file
+                sh "cd ./14-Jenkins/projects/shopping-cart &&  mvn clean install -DskipTests=true"
+        
+            }
+        }
+
+
+        stage('Build and Push Docker Image') {
+            steps{
+                script {
+                    // Login and push using withCredentials
+                    withDockerRegistry(credentialsId: '4c99f15e-9381-4bda-a985-8c3110f431a0', toolName: 'docker') {
+                        // Build Docker image
+                        sh """
+                            cd 14-Jenkins/projects/shopping-cart
+                            docker build -t $DOCKER_IMAGE -f docker/Dockerfile .
+                            docker tag $DOCKER_IMAGE $REGISTRY_USER/$DOCKER_IMAGE
+                            docker push $REGISTRY_USER/$DOCKER_IMAGE
+                        """
+                    } 
+                }
+            }
+        }
+
+        stage('Docker Deploy to Container ') {
+            steps {
+                script {
+                    // Stop and remove existing container if it exists
+                    sh '''
+                        if docker ps -a --format "{{.Names}}" | grep -q "^shopping-cart\$"; then
+                            echo "Stopping and removing existing container: shopping-cart"
+                            docker stop shopping-cart || true
+                            docker rm shopping-cart || true
+                        fi
+                    '''
+                    
+                    // Run Container using withCredentials
+                    withDockerRegistry(credentialsId: '4c99f15e-9381-4bda-a985-8c3110f431a0', toolName: 'docker') {
+                        // Build Docker image
+                        sh """
+                            docker pull $REGISTRY_USER/$DOCKER_IMAGE
+                            docker run -d --name shopping_cart -p 8070:8070 $REGISTRY_USER/$DOCKER_IMAGE
+                        """
+                    } 
+                }
+            }
+        }
+
+    }
+
+    post {
+        always {
+            mail to: 'walzee07@gmail.com',
+                 subject: "Jenkins Build Notification: ${currentBuild.fullDisplayName}",
+                 body: """\
+                 Build Status: ${currentBuild.currentResult}
+                 Project: ${env.JOB_NAME}
+                 Build Number: ${env.BUILD_NUMBER}
+                 Build URL: ${env.BUILD_URL}
+
+                 This is a project build status for our shopping_cart
+                 """
+        }
+    }
+
+}

@@ -1,0 +1,3 @@
+sonar.projectKey=jenkins-sonarcube-project
+
+sqa_e15019bc34625167a1fe7a921ae23d995541f4a0

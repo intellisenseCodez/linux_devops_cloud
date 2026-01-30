@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "ubuntu/trusty64"
+
+    config.vm.hostname = "ubuntu"
+    config.vm.synced_folder "src/", "/src"
+
+    config.vm.network "private_network", ip: "192.168.50.4"
+    config.vm.network "forwarded_port", guest: 80, host: 8080
+    
+    config.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 2
+    end
+
+    config.vm.provision "shell", inline: <<-'SCRIPT'
+    # update and update local packages
+    sudo apt-get update -y && sudo apt-get upgrade -y
+
+    # install git
+    sudo apt-get install git -y
+
+    # install apache2
+    sudo apt-get install apache2 -y
+
+    sudo service apache2 start
+    sudo service apache2 status
+
+    # clone data files
+    git clone https://github.com/dgadiraju/data.git
+    SCRIPT
+
+  end
