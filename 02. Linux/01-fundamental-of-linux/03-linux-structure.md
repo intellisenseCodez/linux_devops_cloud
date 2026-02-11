@@ -1,6 +1,6 @@
 # Linux Core Components Structure
 
-![Linux Core Architecture](../resources/images/linux-core.png)
+![Linux Core Architecture](.../../../../images/linux-core.png)
 
 ```bash
 +----------------------------------------------------+

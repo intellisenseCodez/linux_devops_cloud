@@ -1,6 +1,6 @@
 # Understanding the Folder Structure
 
-![Folder Structure ](../resources/images/folder-structure.png)
+![Folder Structure ](.../../../../images/folder-structure.png)
 
 ### Explanation of System Directories
 

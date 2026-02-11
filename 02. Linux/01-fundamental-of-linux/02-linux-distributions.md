@@ -15,7 +15,7 @@ The kernel decides who will use a resource, for how long and when.You can downlo
 Linux distributions (distros) are different versions of Linux that package the Linux kernel with various software, system utilities, and package managers. Each distro is designed for different use cases, such as personal computing, server management, or security.
 
 ## Three Major Linux Distribution Families
-![Linux Distros Families](/resources/images/linux-distros-families.png)
+![Linux Distros Families](.../../../../images/linux-distros-families.png)
 
 ### The Red Hat Family
     
@@ -85,7 +85,7 @@ Here are some popular Linux distributions:
 
 - **Kernel:**
     
-    ![Linux Kernel](/resources/images/kernel.png)
+    ![Linux Kernel](.../../../../images/kernel.png)
 
     This is consider the brain of the Linux Operating Systems. It controls the hardware and makes the hardware interact with the applications. An example of a kernel is the `Linux Kernel`. The most recent Linux kernel and past Linux Kernels can be found at the [kernels.org](https://www.kernel.org/) website.
 
@@ -105,25 +105,25 @@ Here are some popular Linux distributions:
 
 - **File System:**
 
-    ![File System](/resources/images/filesystem.png)
+    ![File System](.../../../../images/filesystem.png)
 
     A File System is a method for storing and organizing files in Linux. Some examples of file system is ext3, ext4, FAT, XFS and Btrfs.
 
 - **X Window System:**
 
-    ![X Window System](/resources/images/X-window-system.png)
+    ![X Window System](.../../../../images/X-window-system.png)
 
     The X Window System provides the standard toolkit and protocol to build Graphical User Interfaces on nearly all Linux Sytems.
 
 - **Desktop Environment:**
 
-    ![Destop Environment](/resources/images/desktop-environments.png)
+    ![Destop Environment](.../../../../images/desktop-environments.png)
 
     The Desktop Environment is the Graphical User Interface on top of the operating system. GNOME, KDE, Xfce and Fluxbox are examples of some of the desktop environment.
 
 - **Command Line:**
 
-    ![Command Line](/resources/images/commandline.png)
+    ![Command Line](.../../../../images/commandline.png)
 
     The Command Line is an interface for typing commands on top of the operating system.
 
@@ -131,7 +131,3 @@ Here are some popular Linux distributions:
 
     The Shell is the command line interpreter that interprets the command line input and instruct the operating system to perform any necessary tasks and commands. For example: `bash`, `zsh`, and `tcsh`
 
-## Useful References:
-- Linux Kernel Source code: http://git.kernel.org/
-
-- Mirror of Linux Kernel on GitHub: http://github.com/torvalds/linux
