@@ -25,14 +25,15 @@ You can use variables to store data and configuration options. There are two typ
 View All System Variables
 ```bash
 env
+
 printenv
 ```
 
 ## User Defined Variables
 ```bash
-first_name=John
-
-full_name="John Doe"
+name="John"
+echo "Hi $name"  #=> Hi John
+echo 'Hi $name'  #=> Hi $name
 
 age=10
 ```
@@ -42,6 +43,7 @@ age=10
 echo "$varname"
 echo "$PATH"
 echo "${HOME}"
+echo "I'm in $(pwd)" # shell execution
 ```
 
 ### Printf Command

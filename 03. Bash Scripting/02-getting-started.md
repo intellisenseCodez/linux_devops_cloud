@@ -78,7 +78,9 @@ It is an excellent practice to put comments into programs and shell scripts.
 # A Simple Shell Script To Get Linux Network Information
 
 echo "Current date : $(date) @ $(hostname)"
+
 echo "Network configuration"
+
 ifconfig
 ```
 
@@ -90,7 +92,9 @@ ifconfig
 # A Simple Shell Script To Get Linux Network Information
 
 echo "Current date : $(date) @ $(hostname)"
+
 echo "Network configuration"
+
 ifconfig
 
 <<COMMENT1

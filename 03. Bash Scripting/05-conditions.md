@@ -10,10 +10,11 @@ This is useful to control the sequence of command execution. Also, you can do co
 ## Logical AND (&&)
 Logical and (&&) is boolean operator. It can execute commands or shell functions based on the exit status of another command.
 
-## Syntax
+## Conditional execution
 ```bash
-command1 && command2
-command1 -a command2
+command1 && command2 
+
+command1 -a command2 
 ```
 
 command2 is executed if, and only if, command1 returns an **exit status** of zero (true). In other words, run command1 and if it is successfull, then run command2.
@@ -43,6 +44,7 @@ Logical OR (||) is boolean operator. It can execute commands or shell functions 
 ## Syntax
 ```bash
 command1 || command2
+
 command1 -o command2
 ```
 
@@ -89,36 +91,54 @@ test ! -f /etc/resolv.conf && echo "File /etc/resolv.conf not found."
 [ ! -d /backup ] && mkdir /backup
 ```
 
+## Conditionals
+
+```bash
+if [[ -z "$string" ]]; then
+  echo "String is empty"
+elif [[ -n "$string" ]]; then
+  echo "String is not empty"
+fi
+```
+
 ## Numeric comparison
 
-- Equal To (`-eq`)
-- Greater Than or Equal To (`-ge` `>=`)
-- Greater Than (`-gt` or `>`)
-- Less Than or Equal To (`-le` or `<=`)
-- Less Than (`-lt` or `<`)
-- Not Equal To (`-ne`)
+- `[[ NUM -eq NUM ]]` - Equal
+- `[[ NUM -ne NUM ]]` - Not equal
+- `[[ NUM -lt NUM ]]` - Less than
+- `[[ NUM -le NUM ]]` - Less than or equal
+- `[[ NUM -gt NUM ]]` - Greater than
+- `[[ NUM -ge NUM ]]` - Greater than or equal
+- `(( NUM < NUM ))` - Numeric conditions
 
 
 ## String comparison
-- Empty String (`-z`)
-- Not Empty String (`-n`)
-- Equal To (`==` or `=`)
-- Not Equal To (`!=`)
-- Less than (`<`)
-- Greater Than (`>`)
-- Regular Expression (`=~`)
+- `[[ -z STRING ]]` - Empty String
+- `[[ -n STRING ]]` - Not empty sring
+- `[[ STRING == STRING ]]` - Equal
+- `[[ STRING != STRING ]]` - Not Equal
+- `[[ STRING =~ STRING ]]` - Regexp
 
 ## File comparison
-- Exists (`-e`)
-- Directory (`-d`)
-- File (`-f`)
-- Symbolink (`-h`)
-- Size is > 0 bytes (`-s`)
-- Readable (`-r`)
-- Executable (`-x`)
-- f1 newer than f2 (`-nt`)
-- f2 older than f1 (`-ot`)
-- Same files (`-ef`)
+- `[[ -e FILE ]]` - Exists
+- `[[ -r FILE ]]` - Readable
+- `[[ -h FILE ]]` - Symlink
+- `[[ -d FILE ]]` - Directory
+- `[[ -w FILE ]]` - Writable
+- `[[ -s FILE ]]` - Size is > 0 bytes
+- `[[ -f FILE ]]` - File
+- `[[ -x FILE ]]` - Executable
+- `[[ FILE1 -nt FILE2 ]]` - 1 is more recent than 2
+- `[[ FILE1 -ot FILE2 ]]` - 2 is more recent than 1
+- `[[ FILE1 -ef FILE2 ]]` - Same files
+
+
+## More Conditions
+
+- `[[ -o noclobber ]]` - If OPTIONNAME is enabled
+- `[[ ! EXPR ]]` - Not
+- `[[ X && Y ]]` - And
+- `[[ X || Y ]]` - Or
 
 
 ## The case statement

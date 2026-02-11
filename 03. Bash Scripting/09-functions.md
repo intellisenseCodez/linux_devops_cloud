@@ -7,19 +7,22 @@ Functions makes shell script modular and easy to use.
 
 ## Syntax
 ```bash
-function name() { 
- command1
- command2 
+myfunc() {
+    echo "hello $1"
 }
 
 OR
 
-function name { command1; command2; commandN;}  # single line function
+# Same as above (alternate syntax)
+function myfunc {
+    echo "hello $1"
+}
 ```
 
 ## Example
 
 Writing the hello() function
+
 ```bash
 hello() { 
     echo 'Hello world!' ; }

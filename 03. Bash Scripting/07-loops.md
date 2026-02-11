@@ -7,22 +7,30 @@ Bash shell can repeat particular instruction again and again, until particular c
 ## for loop syntax
 ```bash
 for var in item1 item2 ... itemN
-            do
-                    command1
-                    command2
-                    ....
-                    ...
-                    commandN
-            done
+do
+  command1
+  command2
+  ....
+  ...
+  commandN
+done
 ```
 
 example:
 ```bash
 #!/bin/bash
 
-for i in 1 2 3 4 5
-do
+for i in 1 2 3 4 5 do
   echo "Welcome $i times."
+done
+
+for i in {1..5}; do
+    echo "Welcome $i"
+done
+
+# With step size
+for i in {5..50..5}; do
+    echo "Welcome $i"
 done
 ```
 
@@ -32,13 +40,13 @@ The while statement is used to execute a list of commands repeatedly.
 ## Syntax
 ```bash
  while [ condition ]
-           do
-                 command1
-                 command2
-                 ..
-                 ....
-                 commandN
-           done
+do
+  command1
+  command2
+  ..
+  ....
+  commandN
+done
 ```
 
 ## Infinite while loop
