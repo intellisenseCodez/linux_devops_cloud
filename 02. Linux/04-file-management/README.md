@@ -30,6 +30,9 @@
 - `grep pattern file.txt` - used to search for lines in a file that match a given pattern
 - `grep (pattern1|pattern2|..) file.txt` - used to search for multiple patterns at once using OR logic.
 - `grep -E 'pattern1|pattern2|pattern3' file.txt` -
+- `grep -A1 file.txt` -
+- `grep -B1 file.txt` -
+- `grep -C1 file.txt` -
 - `egrep (pattern1|pattern2|..) file.txt` -
 - `cat file.txt | grep patten` - Piping (|) allows you to send the output of one command as input to another.
 - `ps aux | grep nginx` - Piping multiple commands
@@ -56,3 +59,11 @@
 
 ## Comparing Files and Folders
 - `diff filename1 filename2` - used to compare two text files or directories line by line and display the differences
+
+
+## Extra Commands
+- `man <command>` — Manual Pages
+- `help <builtin_command>` — Built-in Command Help
+- `type <command>` — Identify What a Command Is
+- `file <filename>` — Determine File Type
+- `which <command>` shows the full path of the executable that will run when you type a comma

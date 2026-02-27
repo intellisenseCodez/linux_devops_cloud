@@ -2,9 +2,9 @@
 # Module 2: Working with Docker Images and Containers
 
 
-## Understanding Docker architecture
+## Understanding the Docker Architecture
 
-!["Docker architecture"](../resources/images/docker-architecture.png)
+!["Docker architecture"](../images/docker-architecture.png)
 
 The above picture, clearly indicates that Docker Deamon is brain of Docker. If Docker Deamon is killed, stops working for some reasons, Docker is brain dead :p (sarcasm intended).
 
@@ -48,35 +48,66 @@ You might create your own images or you might only use those created by others a
 
 ## Docker Commands
 
-### Pulling Docker Images
+### Docker Info
+- `docker info` : Prints various information on the Docker system and host.
+- `docker help` : Prints usage and help information for the given subcommand. 
+- `docker version` : Prints Docker version information for client and server as well as the version of Go used in compilation.
+
+### Running Your First Image
+To test Docker is installed correctly, try running:
 
 ```bash
-# Pull nginx image
-docker pull nginx
+docker run debian echo "Hello World"
 ```
 
-### List all available Images
+- `docker run command` - is responsible for launching containers.
+- `debian` - is the name of the image
 
+### Interact with a running Container
+We can ask Docker to give us a shell inside a container with the following command:
 ```bash
-docker images ls
+docker run -i -t debian /bin/bash
 ```
+
+This will give you a new command prompt inside the container, very similar to
+*ssh’ing* into a remote machine.
+
+- the flags `-i` and `-t` tell Docker we want
+an interactive session with a tty attached. 
+- the command `/bin/bash` gives us a bash
+shell. 
+
+To exit the shell, type the command `exit` the container will stop.
+
+### Basic Commands
+
+- `docker ps` : display details about all the currently running containers.
+- `docker ps -a` : list of all containers including stopped containers.
+- `docker inspect container_name`: display more information on a given container by running
+- `docker inspect container_name | grep "pattern"` : use
+grep or the --format argument to filter for the information.
+- `docker diff container_name` : list files that have changed in the running container.
+- `docker logs container_name`: display everything that’s happened inside the container.
+- `docker rm container_name` : get rid of individual
+container.
+- `docker rm -v $(docker ps -aq -f status=exited)` : get rid of all your stopped containers.
+
+- `docker pull container_image` : pull docker image from dockerhub
+- `docker images ls` : List all available images
+- `docker run container_image` : run a container
+- `docker run -d container_image`: run a container in detached mode
+- `docker container ls` : list all running container
 
 Docker image management commands includes: `history`, `import`, `inspect`, `load`, `ls`, `prune`, `pull`, `push`, `rm`, `save`, and  `tag`
 
 [Reference](https://docs.docker.com/reference/cli/docker/image/): All docker image commands
 
-### run a container / detached mode
+
+
+### l
 
 ```bash
-docker run nginx:latest
 
-docker run -d nginx:latest
-```
-
-### list all running container
-
-```bash
-docker container ls
 
 docker ps
 ```

@@ -32,6 +32,7 @@ printenv
 ## User Defined Variables
 ```bash
 name="John"
+local name="John" # set local variable to be use within a function or loop 
 echo "Hi $name"  #=> Hi John
 echo 'Hi $name'  #=> Hi $name
 

@@ -3,7 +3,7 @@
 
 Containers don’t write data permanently to any **storage location**. Docker storage must be configured if you would like your container to store data permanently. The data doesn’t prevail when the container is **deleted (using the remove command)**; this happens because when the **container is deleted**, the writable layer is also **deleted**. If the data is stored **outside** the container you can use it even if the container no longer exists.
 
-!["Docker Storage"](../resources/images/docker-storage.jpg)
+!["Docker Storage"](../images/docker-storage.jpg)
 
 If a container crashes and can’t be restored/restarted the data is gone! But, normally containers can be restarted and continued – in that case, the data is not lost. So, it’s always advisable moreover mandatory to mount the data outside the container.
 
@@ -17,7 +17,7 @@ The third way writes directly on to the
 - **host memory (tmpfs)** 
 
 
-![Docker Storage](../resources/images/docker-storage.png)
+![Docker Storage](../images/docker-storage.png)
 
 The difference between these three are: 
 - **volumes**: 
@@ -37,7 +37,7 @@ The difference between these three are:
 Docker bind mount is a permanent storage option but with more limited options than Docker volume. It can’t be managed via Docker CLI and is totally dependent on the availability of the filesystem of the host. A host filesystem can be created when running a container.
 
 ### Bound Mount (Host and Container)
-![Volumns Host and Container](../resources/images/mount-host-container.png)
+![Volumns Host and Container](../images/mount-host-container.png)
 
 #### Commands:
 **bind mount**: note that the host path should start with ‘/’. Use $(pwd) for convenience.
@@ -53,7 +53,7 @@ docker run -v /container-path image-name
 
 
 ### Bound Mount (Container and Container)
-![Volumns Host and Container](../resources/images/mount-container-container.png)
+![Volumns Host and Container](../images/mount-container-container.png)
 
 ```bash
 docker run -volume-from container-name(s) image-name
