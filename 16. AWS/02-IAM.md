@@ -1,4 +1,4 @@
-# AWS Identity Center and Permission Sets 
+# AWS Identity and Access Management (IAM)
 
 ![AWS IAM](../images/AWS-IAM-Illustrations.png)
 
@@ -167,7 +167,7 @@ Permission Set 2: Admin-FullAccess
 - Attach:
     - AdministratorAccess
 
-    
+
 
 Resources:
 - https://docs.aws.amazon.com/pdfs/IAM/latest/UserGuide/iam-ug.pdf#best-practices-use-cases
