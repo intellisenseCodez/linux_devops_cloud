@@ -58,7 +58,49 @@ User tries to delete an S3 bucket.
 - If IAM policy allows `s3:DeleteBucket` → permitted.
 - If not allowed or explicitly denied → access denied.
 
+
+## Components
+
+- **IAM Policies**:
+
+    Policies define the permissions that are being granted or denied. While they do nothing by themselves, they can be attached to all types of Principals (see below). Policies define the action or actions will either be allowed or denied and the resources which are governed by the Policy. If two Policies are in conflict (one says Allow and one Deny), then access is denied.
+
+    ```bash
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+        "Action": [
+            "sqs:SendMessage*"
+        ],
+        "Effect": "Allow",
+        "Resource": "arn:aws:sqs:us-east-1:123456789012:my-queue"
+        }
+    ]
+    }
+    ```
+
+    This Policy allows the Principal to which it is attached to send messages to the referenced queue.
+
+- **IAM Principals**
+
+    An IAM Principal can refer to a human user or a workload that requires credentialed access to AWS resources. There are two main types of Principals in AWS in addition to root users. The primary difference between types of Principals is whether the credentials they provide are permanent or temporary.
+
+- **Root Users**
+
+    Root users are a special type of IAM User that carry additional permissions such as the ability to close the account. Each account has exactly one root user. The best practice is to use that root user to set up other ways to access the account, then stop using it.
+
+- **IAM Users**
+
+    An IAM (Identity and Access Management) user is a unique, persistent digital identity created within a cloud account (like AWS) to represent a specific person or application
+    
+- **Roles**
+
+    Roles are used to grant temporary credentials to both human and machine users. Roles are the simplest way to integrate services in IAM. We can grant a Lambda Function the ability to send messages to SQS. We won't need to provide an access key at runtime. 
+
 ## IAM user Versus AWS Identity Center
+
+`Disclaimer: Identity Center Users are not the same as IAM Users`
 
 ### IAM User
 An IAM User is a long-term identity created inside a single AWS account.
