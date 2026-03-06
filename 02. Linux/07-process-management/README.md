@@ -1,7 +1,42 @@
 # Process Management in Linux
 
 ## Introduction to Process Management
-A process is an instance of a running program. Linux provides multiple utilities to monitor, manage, and control processes effectively. Each process has a unique **Process ID (PID)** and belongs to a parent process.
+A process is simply an instance of one or more related tasks (threads) executing on your computer. It is not the same as a program or a command. A single command may actually start several processes simultaneously. Some processes are independent of each other and others are related. A failure of one process may or may not affect the others running on the system.
+
+Processes use many system resources, such as memory, CPU (central processing unit) cycles, and peripheral devices, such as network cards, hard drives, printers, and displays. The operating system (especially the kernel) is responsible for allocating a proper share of these resources to each process and ensuring overall optimized system utilization.
+
+Each process has a unique **Process ID (PID)** and belongs to a parent process.
+
+## Process Types
+1. **Interactive Processes**: 
+    
+    Need to be started by a user, either at a command line or through a graphical interface such as an icon or a menu selection. 
+
+    Examples: bash, firefox, top, Slack, Libreoffice
+
+2. **Batch Processes**:
+
+    Automatic processes which are scheduled from and then disconnected from the terminal. These tasks are queued and work on a FIFO (First-In, First-Out) basis.	
+
+    Examples: updatedb, ldconfig.
+
+3. **Daemons**:	
+
+    Server processes that run continuously. Many are launched during system startup and then wait for a user or system request indicating that their service is required.
+    
+    Examples: httpd, sshd, libvirtd, cupsd
+
+4. **Threads**:	
+
+    Lightweight processes. These are tasks that run under the umbrella of a main process, sharing memory and other resources, but are scheduled and run by the system on an individual basis. An individual thread can end without terminating the whole process and a process can create new threads at any time. Many non-trivial programs are multi-threaded.	
+    
+    Examples: dconf-service, gnome-terminal-server
+
+5. **Kernel Threads**:
+
+    Kernel tasks that users neither start nor terminate and have little control over. These may perform actions like moving a thread from one CPU to another, or making sure input/output operations to disk are completed.	
+    
+    Examples: kthreadd, migration, ksoftirqd
 
 ## Index of Commands Covered
 

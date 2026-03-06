@@ -3,13 +3,14 @@
 
 Vagrant.configure("2") do |config|
 
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.box_version = "20230607.0.5"
 
     config.vm.hostname = "ubuntu"
     config.vm.synced_folder "src/", "/src"
 
     config.vm.network "private_network", ip: "192.168.50.4"
-    config.vm.network "forwarded_port", guest: 80, host: 8080
+    # config.vm.network "forwarded_port", guest: 80, host: 8080
     
     config.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"
@@ -21,16 +22,16 @@ Vagrant.configure("2") do |config|
     sudo apt-get update -y && sudo apt-get upgrade -y
 
     # install git
-    sudo apt-get install git -y
+    # sudo apt-get install git -y
 
     # install apache2
-    sudo apt-get install apache2 -y
+    # sudo apt-get install apache2 -y
 
-    sudo service apache2 start
-    sudo service apache2 status
+    # sudo service apache2 start
+    # sudo service apache2 status
 
     # clone data files
-    git clone https://github.com/dgadiraju/data.git
+    # git clone https://github.com/dgadiraju/data.git
     SCRIPT
 
   end

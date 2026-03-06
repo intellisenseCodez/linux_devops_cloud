@@ -1,4 +1,18 @@
-# Understanding the Folder Structure
+# Understanding the Linux Filesystems
+
+Libraries separate books and other media into multiple sections; this organization will depend on the subject matter, audience, media type, and frequency of retrieval. The same concept applies to a filesystem, which is the embodiment of a method of storing and organizing arbitrary collections of data in a human-usable form.
+
+Different types of filesystems supported by Linux:
+
+- Conventional disk filesystems: ext3, ext4, XFS, Btrfs, JFS, NTFS, vfat, exfat, etc.
+- Flash storage filesystems: ubifs, jffs2, yaffs, etc.
+- Database filesystems
+- Special purpose filesystems: procfs, sysfs, tmpfs, squashfs, debugfs, fuse, etc.
+
+This section will describe the standard filesystem layout shared by most Linux distributions.
+
+## The Filesystem Hierarchy Standard (FHS)
+Linux systems store their important files according to a standard layout called the Filesystem Hierarchy Standard (FHS), which has long been maintained by the Linux Foundation. For more information, take a look at the following document: ["Filesystem Hierarchy Standard"](https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.pdf) created by LSB Workgroup. Having a standard is designed to ensure that users, administrators, and developers can move between distributions without having to re-learn how the system is organized.
 
 ![Folder Structure ](.../../../../images/folder-structure.png)
 
