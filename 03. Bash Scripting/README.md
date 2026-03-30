@@ -9,5 +9,6 @@
     - https://quickref.me/bash.html
     - https://linuxize.com/tags/bash/
     - https://www.shellcheck.net/
+    - https://notes.kodekloud.com/docs/Advanced-Bash-Scripting/Introduction/Course-Introduction/page
 - **Youtube**
     

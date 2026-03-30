@@ -14,7 +14,7 @@ We'll create our first  repository - Hello World and learn GitHub's pull request
 
 ## Git Workflow
 
-!["Git Workflow"](../resources/images/git-workflow.png)
+!["Git Workflow"](../images/git-workflow.png)
 
 ## Basic Git commands
 To use Git, developers use specific commands to copy, create, change, and combine code. These commands can be executed directly from the command line or by using an application like GitHub Desktop. Here are some common commands for using Git:
