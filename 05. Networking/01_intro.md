@@ -4,7 +4,7 @@ A computer network is simply a group of computers and devices linked together in
 
 These devices are linked using physical cables (like Ethernet) or wireless technologies (like Wi-Fi).
 
-!["Computer Home Networking"](../resources/images/home-computer-networking.webp)
+!["Computer Home Networking"](../images/home-computer-networking.webp)
 
 ## How does a computer network work?
 A computer network works by connecting multiple devices (computers, servers, routers, etc.) so they can exchange data and share resources efficiently. Here’s a simple breakdown of how it works:
@@ -30,12 +30,12 @@ Before we get into more complex networking details, we need to take a second and
     - IP address and 
     - a MAC address.
 
-!["Network Interface Card"](../resources/images/NIC.png)
+!["Network Interface Card"](../images/NIC.png)
 Ethernet Port, Wifi Card, and USB NIC
 
 3. **MAC Address**: This 'Media Access Control' address also known as Physical and hardware address is a unique and permanent address assigned to a NIC by its manufacturer. It's like your device's postal address on the network.
 
-!["MAC Address"](../resources/images/MAC.png)
+!["MAC Address"](../images/MAC.png)
 
 The first six digits 00:1B:44 is called *Organizational Unique Identifier (OUI)*, is provided by the manufacturer and the rest of the digit is 11:3A: B7 which is *NIC Address*.
 
@@ -47,11 +47,11 @@ The first six digits 00:1B:44 is called *Organizational Unique Identifier (OUI)*
 
 5. **Router**: This hardware device routes data from one network to another. Picture it as a traffic officer, directing packets of data along the network to prevent congestion and ensure data gets to the right place
 
-!["Router"](../resources/images/router.webp)
+!["Router"](../images/router.webp)
 
 6. **Switch**: Yet another vital network device, a switch connects devices on a network. It operates much like a multi-port bridge, further directing traffic
 
-!["Switch"](../resources/images/switch.webp)
+!["Switch"](../images/switch.webp)
 
 7. **Packet**: Information sent over a network is broken into smaller pieces called packets. These are like the individual letters that make up a word or the words that make up a page
 
@@ -61,7 +61,7 @@ The first six digits 00:1B:44 is called *Organizational Unique Identifier (OUI)*
 
 10. **Ethernet**: This is the most common protocol for wired Local Area Networks (LANs). If you've seen a cable connecting a computer to the internet, you've seen Ethernet at work.
 
-!["Ethernet"](../resources/images/ethernet.webp)
+!["Ethernet"](../images/ethernet.webp)
 
 11. **Wi-Fi**: This is a protocol for wireless networking, where devices connect to a network through a Wi-Fi router
 
@@ -78,7 +78,7 @@ The first six digits 00:1B:44 is called *Organizational Unique Identifier (OUI)*
     - **Mesh Topology**
     - **Tree/Hybrid Topology**
 
-!["Network Topology"](../resources/images/types_of_network_topology.webp)
+!["Network Topology"](../images/types_of_network_topology.webp)
 
 
 16. **ISP**: Your Internet Service Provider is the company that provides your Internet access
@@ -87,27 +87,27 @@ The first six digits 00:1B:44 is called *Organizational Unique Identifier (OUI)*
 ## Analogy
 
 ### Case Study 1
-!["Network Topology"](../resources/images/nps1.png)
+!["Network Topology"](../images/nps1.png)
 
 ### Case Study 2
-!["Network Topology"](../resources/images/nps2.png)
+!["Network Topology"](../images/nps2.png)
 
 
 ## Funtions of Router Gateway
 
 ## Proxy Server
-!["Proxy Server"](../resources/images/proxy_server.png)
+!["Proxy Server"](../images/proxy_server.png)
 
 
 ## Caching
 Caching is a technique in computing that stores frequently accessed data or resources in a temporary storage location, called a cache, to improve performance by enabling faster retrieval.
-!["Cache"](../resources/images/caching.png)
+!["Cache"](../images/caching.png)
 
 ## Network Address Translation (NAT)
-!["NAT"](../resources/images/nat.png)
+!["NAT"](../images/nat.png)
 
 ## Firewall
-!["Firewall"](../resources/images/firewall.png)
+!["Firewall"](../images/firewall.png)
 
 ## Import Links
 * https://zerotomastery.io/blog/introduction-to-networking/

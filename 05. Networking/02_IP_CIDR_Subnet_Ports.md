@@ -20,7 +20,7 @@ A key point here is that, by standard, **an IP address is 32 bits long (4 bytes)
 
 The IPv4 address space is a finite resource, and we need to wisely utilize each IP address (similar to our planet's land). 
 
-!["Ipv4 Address"](../resources/images/IPv4.webp)
+!["Ipv4 Address"](../images/IPv4.webp)
 
 ### IPv6
 A newer version due to IPv4 exhaustion, written as eight groups of four hexadecimal digits separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334). It has a much larger address space.
@@ -42,7 +42,7 @@ Subnetting is the process of dividing a large network (IP address space) into sm
 
 ### Classful IP Networks
 
-!["Ipv4 Address"](../resources/images/classful-IP.jpg)
+!["Ipv4 Address"](../images/classful-IP.jpg)
 
 
 ## Classless Inter-Domain Routing 
@@ -53,7 +53,7 @@ CIDR allows networks to be divided into variable-sized subnets, providing better
 ## Use Case
 Suppose a company has a block of 256 public IP addresses provided by the local service provider. 
 
-![""](../resources/images/block-of-256-addresses.svg)
+![""](../images/block-of-256-addresses.svg)
 
 The IP address block is 37.1.1.0 , written in slash notation as 37.1.1.0/24. Using the CIDR, we can easily calculate that the boundaries of this network are Network ID 37.1.1.0 and Broadcast address 37.1.1.255, as shown in figure 1 above
 
