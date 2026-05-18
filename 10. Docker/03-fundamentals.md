@@ -138,7 +138,7 @@ docker run -name my-sebsite -d -p 8080:80  nginx:latest
 
 ## Lifecycle of a docker container 
 
-![Container Lifecycle](../resources/images/container-lifecycle.webp)
+![Container Lifecycle](../images/container-lifecycle.webp)
 
 The lifecycle of a docker container consists of five states:
 
@@ -149,7 +149,7 @@ The lifecycle of a docker container consists of five states:
 5. Killed/Deleted state
 
 ### Complete lifecycle of a Docker container
-![Container Lifecycle](../resources/images/comple-lifecycle.webp)
+![Container Lifecycle](../images/comple-lifecycle.webp)
 
 ### Create Containers
 Using the docker create command will create a new Docker container with the specified docker image.

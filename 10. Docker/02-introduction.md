@@ -23,7 +23,7 @@ Docker, Rocket (rkt), Linux Containers (LXC), CRI-O, containerd.
 ## Containers vs. Virtual Machines
 Containers and virtual machines are both technologies used to isolate applications and their dependencies, but they have some key differences:
 
-![Containers Vs Virtual Machine](../resources/images/docker-vs-vms.webp)
+![Containers Vs Virtual Machine](../images/docker-vs-vms.webp)
 
 | Containers | Virtual Machines |
 |-----------|-------------|
