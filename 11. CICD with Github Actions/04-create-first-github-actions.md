@@ -2,7 +2,7 @@
 
 ## Core Components
 
-![](../resources/images/github-actions-core-concepts.png)
+![](../images/github-actions-core-concepts.png)
 
 ## 1. Create the Workflow File
 In your repository, create a new folder and file:

@@ -49,7 +49,7 @@ In the field of DevOps and software development, CI/CD streamlines the processes
 
 ## CI/CD Pipeline Stages and Phases 
 
-![CICD Process](../resources/images/CICD-Process.webp)
+![CICD Process](../images/CICD-Process.webp)
 
 Typical stages of a CI/CD pipeline:
 

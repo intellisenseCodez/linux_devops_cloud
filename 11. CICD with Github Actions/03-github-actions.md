@@ -9,7 +9,7 @@ GitHub provides `Linux`, `Windows`, and `macOS` virtual machines to run your wor
 
 GitHub Actions allows you to configure your workflow to be triggered once a specific event occurs in the repository. For example, when an issue is created or when a pull request is opened. 
 
-![ Github Actions](../resources/images/GitHub-Actions-workflow-structure.webp)
+![ Github Actions](../images/GitHub-Actions-workflow-structure.webp)
 
 - **GitHub Actions Workflows**
 
